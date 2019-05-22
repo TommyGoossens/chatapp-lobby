@@ -1,0 +1,47 @@
+
+
+# =======================================
+# = JWT Configuration
+# =======================================
+jwtSecret: jwtSecretKey
+jwtExpiration: 86400 # -> 1 day
+
+
+# =======================================
+# = Server Configuration
+# =======================================
+server:
+  port: 22505
+
+# =======================================
+# = Spring Configuration
+# =======================================
+spring:
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  datasource:
+    url: jdbc:h2:mem:database
+    username: sa
+    password:
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  application:
+    name: lobby-service
+
+# =======================================
+# = Eureka Configuration
+# =======================================
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:22500/eureka
+  instance:
+    prefer-ip-address: false
+
