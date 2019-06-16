@@ -17,14 +17,10 @@ server:
 # = Spring Configuration
 # =======================================
 spring:
-  h2:
-    console:
-      enabled: true
-      path: /h2
   datasource:
-    url: jdbc:h2:mem:database
-    username: sa
-    password:
+    url: jdbc:mysql://localhost:3306/chatapp_lobby?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
   jpa:
     show-sql: true
     hibernate:

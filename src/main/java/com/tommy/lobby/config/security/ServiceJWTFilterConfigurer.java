@@ -1,4 +1,4 @@
-package com.tommy.lobby.security;
+package com.tommy.lobby.config.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.config.annotation.SecurityConfigurerAdapter;

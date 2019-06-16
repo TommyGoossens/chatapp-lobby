@@ -1,4 +1,4 @@
-package com.tommy.lobby.security;
+package com.tommy.lobby.config.security;
 
 import io.jsonwebtoken.Jwts;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -7,8 +7,6 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
-
-import static com.tommy.lobby.security.SecurityConstants.SECRET_KEY;
 
 @Component
 public class ServiceJWTReader {
@@ -20,7 +18,7 @@ public class ServiceJWTReader {
      */
     public String getUsername(String token){
         return Jwts.parser()
-                .setSigningKey(SECRET_KEY)
+                .setSigningKey(SecurityConstants.SECRET_KEY)
                 .parseClaimsJws(token)
                 .getBody()
                 .getSubject();
@@ -35,7 +33,7 @@ public class ServiceJWTReader {
      */
     private List<String> getRoles(String token){
         return (List<String>) Jwts.parser()
-                .setSigningKey(SECRET_KEY)
+                .setSigningKey(SecurityConstants.SECRET_KEY)
                 .parseClaimsJws(token)
                 .getBody()
                 .get("roles");

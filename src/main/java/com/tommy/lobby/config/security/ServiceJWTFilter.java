@@ -1,4 +1,4 @@
-package com.tommy.lobby.security;
+package com.tommy.lobby.config.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -12,8 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-import static com.tommy.lobby.security.SecurityConstants.HEADER_STRING;
-import static com.tommy.lobby.security.SecurityConstants.TOKEN_PREFIX;
+import static com.tommy.lobby.config.security.SecurityConstants.HEADER_STRING;
+import static com.tommy.lobby.config.security.SecurityConstants.TOKEN_PREFIX;
 
 @Component
 public class ServiceJWTFilter extends OncePerRequestFilter {

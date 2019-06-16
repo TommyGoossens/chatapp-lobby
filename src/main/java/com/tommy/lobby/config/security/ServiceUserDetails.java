@@ -1,4 +1,4 @@
-package com.tommy.lobby.security;
+package com.tommy.lobby.config.security;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.AuthorityUtils;

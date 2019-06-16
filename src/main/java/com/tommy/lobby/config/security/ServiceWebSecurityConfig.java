@@ -1,4 +1,4 @@
-package com.tommy.lobby.security;
+package com.tommy.lobby.config.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -37,8 +37,12 @@ public class ServiceWebSecurityConfig extends WebSecurityConfigurerAdapter {
         // Entry point for this service
         http
                 .authorizeRequests()
-                .antMatchers("/**")
-                .permitAll()
+                .antMatchers("/swagger-ui.html").permitAll()
+                .antMatchers("/api").permitAll()
+                .antMatchers("/v2/api-docs").permitAll()
+                .antMatchers("/wslobby/**").permitAll()
+                .antMatchers("/register").permitAll()
+                .antMatchers("/handlechatmessage").permitAll()
                 .and()
                 .authorizeRequests()
                 .anyRequest()
