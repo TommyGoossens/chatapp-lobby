@@ -43,6 +43,7 @@ public class ServiceWebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/wslobby/**").permitAll()
                 .antMatchers("/register").permitAll()
                 .antMatchers("/handlechatmessage").permitAll()
+                .antMatchers("/userserviceimg").permitAll()
                 .and()
                 .authorizeRequests()
                 .anyRequest()
